@@ -13,7 +13,7 @@ class  graph {
 	int nodeindex(node *versh) {
 		for (int i = 0; i < size; i++) {
 			if (&nodes[i] == versh) {
-				return i;
+				return i+1;
 			}
 		}
 		return -1;
@@ -56,6 +56,7 @@ public:
 			}
 			else {
 				nodes[i].connectnodes = nullptr;
+                nodes[i].nodenumber = numbernode;
 				
 			}
 			nodes[i].value = i;

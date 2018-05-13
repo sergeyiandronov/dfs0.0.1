@@ -5,7 +5,7 @@
 
 TEST_CASE("graph")
 {
-    std::string input{"0 1 2 \n"};
+    std::string input{"1 2 3 \n"};
     
     int **table=new int*[3];
 	for (int i = 0; i < 3; i++) {
