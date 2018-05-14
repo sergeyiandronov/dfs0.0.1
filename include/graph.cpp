@@ -19,14 +19,14 @@ class  graph {
 		return -1;
 	}
 	void dfs(node *versh,int *vector,int &m) {
-		if (versh->color == black) {
-			return;
-		}
+		
 		versh->color = black;
 		vector[m] = nodeindex(versh);
 		m += 1;
 		for (int i=0; i < versh->nodenumber; i++) {
-			dfs(versh->connectnodes[i], vector, m);
+			if(versh->connectnodes[i]->color==white){
+                dfs(versh->connectnodes[i], vector, m);
+            }
 		}
 	}
 public:	
@@ -96,6 +96,7 @@ public:
 			stream << vector[i] << " ";
 		}
 		stream << '\n';
+        delete vector;
 	}
 	void printnode(int f) {
 		for (int i = 0; i < nodes[f].nodenumber; i++) {
